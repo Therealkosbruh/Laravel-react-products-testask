@@ -6,13 +6,6 @@ use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\ProductController;
 use Illuminate\Support\Facades\Mail;
 
-// Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
-//     return $request->user();
-// });
-
-Route::get('/hello', function () {
-    return response()->json(['message' => 'Привет']);
-});
 
 
 

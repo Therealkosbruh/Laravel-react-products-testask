@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Console\Command;
 
-// implements ShouldQueue
 class SendProductToWebhookJob extends Command
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;

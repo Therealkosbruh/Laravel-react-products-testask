@@ -22,14 +22,14 @@ class ProductRequest extends FormRequest
             'img' => 'nullable|url',
         ];
 
-        // Если это создание продукта (метод POST), article обязателен
+      
         if ($this->isMethod('post')) {
             $rules['article'] = 'required|string|regex:/^[a-zA-Z0-9]+$/|unique:products,article';
         }
 
-        // Если это обновление продукта (метод PUT/PATCH), проверяем права
+    
         if ($this->isMethod('put') || $this->isMethod('patch')) {
-            $user = $this->user(); // Получаем авторизованного пользователя
+            $user = $this->user(); 
 
             if ($user && $user->role === 'admin') {
                 $rules['article'] = 'sometimes|string|regex:/^[a-zA-Z0-9]+$/|unique:products,article,' . $this->route('id');
